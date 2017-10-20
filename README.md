@@ -1,6 +1,6 @@
 # A Brief Comparison of Two Enterprise-Class RDBMSs
 
-This repository contains an extented version of work originating from course "CS299-03 - Database Design, Development & Administration", held Spring 2017 at Western Connecticut State University. This course was a student-directed study advised by Dr. Sean Murthy, and directed by Andrew Figueroa and Steven Rollo, two Computer Science students at Western Connecticut State University. The study compared Microsoft® SQL Server® and PostgreSQL, two widely-used enterprise-class relational database management systems (RDBMSs). The study followed an introductory undergraduate course in relational systems and was designed to help the students gain practical understanding of specific DBMSs. 
+This repository contains an extended version of work originating from course "CS299-03 - Database Design, Development & Administration", held Spring 2017 at Western Connecticut State University. This course was a student-directed study advised by Dr. Sean Murthy, a member of the Computer Science faculty at WCSU, and directed by Andrew Figueroa and Steven Rollo, two Computer Science students at WCSU. The study compared Microsoft® SQL Server® and PostgreSQL, two widely-used enterprise-class relational database management systems (RDBMSs). The study followed an introductory undergraduate course in relational systems and was designed to help the students gain practical understanding of specific DBMSs. 
 
 During this study, with input from Dr. Sean Murthy, the students implemented three non-trivial schemas in each system, identified 26 common database design, development, and administration activities while implementing the schemas, and compared the support each system offers to carry out the identified activities. Additionally, work continued on the paper after the completion of the course, producing an extended version of the original paper.
 
@@ -12,7 +12,7 @@ The `/paper` directory contains an extended version of a report from the student
 
 ## Working Examples
 
-The `/src` directory contains the full SQL implementations of the working examples from the paper, and the full implementation of the three schemas for both Microsoft SQL Server and PostgreSQL. 
+The `/src` directory contains the full SQL implementations of the working examples from the paper, and the full implementation of the three schemas for both Microsoft SQL Server and PostgreSQL.
 
 ### Schemas
 
