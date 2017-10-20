@@ -2,12 +2,12 @@
 --
 --3_includedColumns_TSQL.sql
 --
---Final Paper Shelter Schema (T-SQL) - 10/8/2017
+--Final Paper Shelter Schema (T-SQL) - 10/13/2017
 
 --Creates an index with included columns
 
-CREATE INDEX IX_dog_ArrivalDate
-ON dog (arrival_date)
+CREATE INDEX IX_Dog_ArrivalDate
+ON Dog (arrival_date)
 INCLUDE (name, breed);
 
 

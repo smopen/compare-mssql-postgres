@@ -2,12 +2,12 @@
 --
 --3_multiColumnIndex_pgSQL.sql
 --
---Final Paper Shelter Schema (pgSQL) - 10/8/2017
+--Final Paper Shelter Schema (pgSQL) - 10/13/2017
 
 --Creates a multi-column index
 
-CREATE INDEX IX_dog_ArrivalDate
-ON dog (arrival_date, name, breed);
+CREATE INDEX IX_Dog_ArrivalDate
+ON Dog (arrival_date, name, breed);
 
 --The name and breed column will be used for organizing the index. Although this
 -- increases the number of queries which may be covered by the index, it can 

@@ -2,11 +2,11 @@
 --
 --2_computedColumns_TSQL.sql
 --
---Final Paper Shelter Schema (T-SQL) - 10/8/2017
+--Final Paper Shelter Schema (T-SQL) - 10/13/2017
 
 --Creates a table with a computed column
 
-CREATE TABLE dog
+CREATE TABLE Dog
 (
    dog_id INTEGER PRIMARY KEY,
    name VARCHAR(15),
