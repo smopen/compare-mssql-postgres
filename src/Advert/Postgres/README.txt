@@ -1,1 +1,0 @@
-These sql files are a set of examples to go along with our paper.  They are numbered, and designed to be run in numberical order.  Each sql file contains some additional comments about the example it contains.
