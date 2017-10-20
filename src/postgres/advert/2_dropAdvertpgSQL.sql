@@ -2,11 +2,11 @@
 --
 --2_dropAdvertpgSQL.sql
 --
---Final Paper Advert Schema (pgSQL) - 5/12/2017
+--Final Paper Advert Schema (pgSQL) - 10/5/2017
 
-SELECT 'Steven Rollo - CS299 Final Paper 2_dropAdvertpgSQL.sql' "ASSIGNMENT"; --Assignment is a keyword in Postgres
+SELECT '2_dropAdvertpgSQL.sql' "CS299 EXAMPLES"; --Assignment is a keyword in Postgres
 
-SELECT 'Dropping Tables' SECTION_01;
+DROP TABLE IF EXISTS new_ad_journal;
 
 DROP VIEW IF EXISTS INVOICE;
 DROP VIEW IF EXISTS ADVERTISER;

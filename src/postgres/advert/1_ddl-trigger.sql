@@ -2,14 +2,17 @@
 --
 --1_ddl-trigger.sql
 --
---Final Paper Advert Schema (pgSQL) - 5/12/2017
+--2017-Spring-CS299 Paper Advert Schema (pgSQL) - 10/5/2017
+
+SELECT '1_ddl-trigger.sql' "CS299 EXAMPLES";
+
 DROP EVENT TRIGGER IF EXISTS log_ddl_trigger;
 DROP EVENT TRIGGER IF EXISTS log_ddl_drop_trigger;
 DROP FUNCTION IF EXISTS log_ddl();
 DROP FUNCTION IF EXISTS log_ddl_drop();
 DROP TABLE IF EXISTS ddl_event_log;
 
-CREATE TABLE ddl_event_log(
+CREATE TABLE public.ddl_event_log(
   id SERIAL PRIMARY KEY,
   event_timestamp TIMESTAMP WITH TIME ZONE NOT NULL,
   user_name TEXT,
@@ -25,7 +28,7 @@ CREATE OR REPLACE FUNCTION log_ddl()
 RETURNS event_trigger AS
 $BODY$
 BEGIN
-  INSERT INTO "NewspaperAds".public.ddl_event_log(event_timestamp, user_name, event, tag, object_name, object_identity, ip_address)
+  INSERT INTO public.ddl_event_log(event_timestamp, user_name, event, tag, object_name, object_identity, ip_address)
   SELECT statement_timestamp(), session_user::text, tg_event, tg_tag, pg.object_type, pg.object_identity, inet_client_addr()
   FROM pg_event_trigger_ddl_commands() pg;
 END;
@@ -37,7 +40,7 @@ CREATE OR REPLACE FUNCTION log_ddl_drop()
 RETURNS event_trigger AS
 $BODY$
 BEGIN
-  INSERT INTO "NewspaperAds".public.ddl_event_log(event_timestamp, user_name, event, tag, object_name, object_identity, ip_address)
+  INSERT INTO public.ddl_event_log(event_timestamp, user_name, event, tag, object_name, object_identity, ip_address)
   SELECT statement_timestamp(), session_user::text, tg_event, tg_tag, pg.object_type, pg.object_identity, inet_client_addr()
   FROM pg_event_trigger_dropped_objects() pg;
 END;

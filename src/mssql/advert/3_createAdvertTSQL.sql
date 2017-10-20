@@ -2,7 +2,9 @@
 --
 --3_createAdvertTSQL.sql
 --
---Final Paper Advert Schema - 5/12/2017
+--2017-Spring-CS299 Paper Advert Schema - 10/5/2017
+
+SELECT '3_createAdvertTSQL.sql' "CS299 EXAMPLES";
 
 --The ADVERTISER entity is fully represented by the view ADVERTISER below
 CREATE TABLE ADVERTISER_T

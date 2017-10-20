@@ -2,7 +2,9 @@
 --
 --4_dml-trigger.sql
 --
---Final Paper Advert Schema (pgSQL)- 5/12/2017
+--2017-Spring-CS299 Paper Advert Schema (pgSQL)- 10/5/2017
+
+SELECT '4_dml-trigger.sql' "CS299 EXAMPLES";
 
 --When a new ad is inserted into the db, this function is executed by a trigger
 CREATE OR REPLACE FUNCTION update_ad_runs()
@@ -35,30 +37,37 @@ END;
 $BODY$
 LANGUAGE plpgsql;
 
---When an existing ad is removed from the db, this function is executed by a trigger
-CREATE OR REPLACE FUNCTION delete_ad_runs()
-RETURNS trigger AS
-$BODY$
-BEGIN --Remove all ad_runs, invoices and payments associated with the ad being removed
-	DELETE FROM ad_run WHERE ad_id = OLD.ad_id;
-	DELETE FROM payment WHERE ad_id = OLD.ad_id;
-	DELETE FROM invoice_t WHERE ad_id = OLD.ad_id;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-DROP TRIGGER IF EXISTS update_ad_runs_trigger ON ad_t;
-DROP TRIGGER IF EXISTS delete_ad_runs_trigger ON ad_t;
-
 CREATE TRIGGER update_ad_runs_trigger
 AFTER INSERT
 ON ad_t
 FOR EACH ROW
 EXECUTE PROCEDURE update_ad_runs();
 
-CREATE TRIGGER delete_ad_runs_trigger
-BEFORE DELETE
+
+DROP TABLE IF EXISTS new_ad_journal;
+
+CREATE TABLE new_ad_journal (
+   id SERIAL PRIMARY KEY,
+   insert_timestamp TIMESTAMP WITH TIME ZONE NOT NULL,
+   user_name TEXT,
+   ip_address INET,
+   ad_id NUMERIC(10,0) REFERENCES ad_t
+);
+
+--When a new ad is inserted into the db, this function is executed by a trigger
+CREATE OR REPLACE FUNCTION updateNewAdJournal()
+RETURNS trigger AS
+$$
+BEGIN
+   INSERT INTO new_ad_journal(insert_timestamp, user_name, ip_address, ad_id)
+   SELECT statement_timestamp(), session_user::TEXT, inet_client_addr(), NEW.ad_id;
+   RETURN NEW;
+END;
+$$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER updateAdJournalTrigger
+AFTER INSERT
 ON ad_t
 FOR EACH ROW
-EXECUTE PROCEDURE delete_ad_runs();
+EXECUTE PROCEDURE updateNewAdJournal();

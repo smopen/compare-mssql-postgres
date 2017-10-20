@@ -2,7 +2,9 @@
 --
 --5_opspgSQL.sql
 --
---Final Paper Advert Schema (pgSQL)- 5/12/2017
+--2017-Spring-CS299 Paper Advert Schema (pgSQL)- 10/5/2017
+
+SELECT '5_opspgSQL.sql' "CS299 EXAMPLES";
 
 INSERT INTO advertiser_t
 VALUES      (0, 0, 0);
@@ -49,12 +51,8 @@ SELECT * FROM ad_t;
 SELECT * FROM invoice;
 SELECT * FROM ad_run;
 
-DELETE FROM ad_t WHERE ad_id = 1;
-
---show the results of the delete dml trigger
-SELECT * FROM ad_t;
-SELECT * FROM invoice;
-SELECT * FROM ad_run;
-
 --show the results of the ddl trigger
 SELECT * FROM ddl_event_log;
+
+--show the results of the dml journaling trigger
+SELECT * FROM new_ad_journal;

@@ -2,10 +2,12 @@
 --
 --5_opsTSQL.sql
 --
---Final Paper Advert Schema - 5/12/2017
+--2017-Spring-CS299 Paper Advert Schema (MSSQL) - 10/5/2017
 
 --This script performs some operations on the tables in the Advert schema.
 --These will demonstrate the triggers created in the previous script
+SELECT '5_opsTSQL.sql' "CS299 EXAMPLES";
+
 INSERT INTO advertiser_t
 VALUES      (0, 0, 0);
 INSERT INTO contact_info
@@ -42,19 +44,16 @@ VALUES      (0, 'RODISCFURN2016000000',DATEADD(day, -15, CAST(GETDATE() AS DATE)
 INSERT INTO ad
 VALUES      (3,'UNIBOOKSTR2016111100',DATEADD(day, 0, CAST(GETDATE() AS DATE)), DATEADD(day, 7, CAST(GETDATE() AS DATE)),3,14,1,1,1,1,2);
 
---Show the result of the user ops and dml trigger
+--Show the result of the user ops
 SELECT * FROM ad;
 SELECT * FROM invoice;
 SELECT * FROM ad_run;
 SELECT * FROM payment;
 
-DELETE FROM ad WHERE ad_id = 1;
+--Show the result of the DML trigger
+SELECT *
+FROM new_ad_journal;
 
---show the results of the delete dml trigger
-SELECT * FROM ad;
-SELECT * FROM invoice;
-SELECT * FROM ad_run;
-
---show the results of the ddl and logon triggers
+--Show the results of the ddl and logon triggers
 SELECT * FROM master.dbo.ddl_event_log;
 SELECT * FROM master.dbo.user_logon_log;

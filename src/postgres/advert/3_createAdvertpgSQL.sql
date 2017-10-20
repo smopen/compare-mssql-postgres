@@ -2,7 +2,10 @@
 --
 --3_createAdvertpgSQL.sql
 --
---Final Paper Advert Schema (pgSQL)- 5/12/2017
+--2017-Spring-CS299 Paper Advert Schema (pgSQL)- 10/5/2017
+
+SELECT '3_createAdvertpgSQL.sql' "CS299 EXAMPLES";
+
 CREATE TABLE	advertiser_t
 (
   advertiser_id NUMERIC(5,0) CHECK(advertiser_id > -1) PRIMARY KEY,

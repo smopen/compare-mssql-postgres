@@ -2,17 +2,28 @@
 --
 --1_classroom_TSQL.sql
 --
---Final Paper Classroom Scenario (T-SQL) - 5/11/2017
+--Final Paper Classroom Scenario (T-SQL) - 10/8/2017
 
 --The following is specific example of creating a student
---Implementations with stored procedures will vary depending on the organization's
+--Implementations with stored procedures will vary depending on an organization's
 --  users and group structure.
 
-CREATE ROLE CS205F17Student;
-CREATE ROLE CS205F17Instructor;
 
-CREATE USER [WCSU\Students\Ramsey033];
-ALTER ROLE CS205F17Student ADD MEMBER [WCSU\Students\Ramsey033];
+--create roles and users
+CREATE ROLE Student;
+CREATE ROLE Instructor;
+CREATE LOGIN Ramsey033;
+CREATE USER Ramsey033;
 
-CREATE SCHEMA ramsey033 GRANT SELECT, INSERT, DELETE, UPDATE;
-GRANT SELECT on SCHEMA ramsey033 to CS205F17Instructor;
+--associate a user with a role
+ALTER ROLE Student ADD MEMBER Ramsey033;
+
+--create a schema object for illustration 
+CREATE SCHEMA ramsey033;
+
+--give a particular user CRUD access to schema
+GRANT SELECT, INSERT, DELETE, UPDATE 
+ ON SCHEMA ramsey033 TO Ramsey033
+
+--let any member of Instructor role read schema
+GRANT SELECT ON SCHEMA ramsey033 TO Instructor;
