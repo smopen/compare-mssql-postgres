@@ -1,10 +1,10 @@
 # A Brief Comparison of Two Enterprise-Class RDBMSs
 
-This repository contains an extended version of work originating from course "CS299-03 - Database Design, Development & Administration", held Spring 2017 at Western Connecticut State University. This course was a student-directed study advised by Dr. Sean Murthy, a member of the Computer Science faculty at WCSU, and directed by Andrew Figueroa and Steven Rollo, two Computer Science students at WCSU. The study compared Microsoft® SQL Server® and PostgreSQL, two widely-used enterprise-class relational database management systems (RDBMSs). The study followed an introductory undergraduate course in relational systems and was designed to help the students gain practical understanding of specific DBMSs. 
+This repository contains an extended version of work originating from the course "CS299-03 - Database Design, Development & Administration", held Spring 2017 at Western Connecticut State University (WCSU). This course was a student-directed study advised by Dr. Sean Murthy, a member of the Computer Science faculty at WCSU, and directed by Andrew Figueroa and Steven Rollo, two Computer Science students at WCSU. The study compared Microsoft® SQL Server® and PostgreSQL, two widely-used enterprise-class relational database management systems (RDBMSs). The study followed an introductory undergraduate course in relational systems and was designed to help the students gain practical understanding of specific DBMSs. 
 
-During this study, with input from Dr. Sean Murthy, the students implemented three non-trivial schemas in each system, identified 26 common database design, development, and administration activities while implementing the schemas, and compared the support each system offers to carry out the identified activities. Additionally, work continued on the paper after the completion of the course, producing an extended version of the original paper.
+During this study, with input from Dr. Sean Murthy, the students implemented three non-trivial schemas in each system, identified 26 common database design, development, and administration activities while implementing the schemas, and compared the support each system offers to carry out the identified activities. This study resulted in a report that summaried the findings from this comparision. Following completion of the course, work continued on the report, producing a full paper as an extention of the initial report.
 
-This repository contains an extended version of the paper and working examples created during this study.
+This repository contains the submitted revisions of the paper and the working examples created during the study.
 
 ## Paper
 
@@ -24,4 +24,4 @@ The `/src` directory contains the full SQL implementations of the working exampl
 
 Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee.
 
-© 2017 Andrew Figueroa, Steven Rollo, Sean Murthy. [CC BY-NC-SA 4.0 ](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+© 2017 Andrew Figueroa, Steven Rollo, Sean Murthy. [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
